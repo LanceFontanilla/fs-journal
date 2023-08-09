@@ -28,16 +28,16 @@
      h1 = selector; color = property ; rgba(255,210, 33, .75) = value
 
 07. How do you think good design influences people when visiting a website, and what sorts of things could you convey through design alone?
-    > 
+    > I think a good design influences people that visit a website in a positive way. When people see a well laid out webpage they are more inclined to stay on that site and trust the owners of the site. For example if a person visited a website of a website designer and that site was not designed well, people wouldn't trust that person to build them a website. I feel the same way about other businesses. I feel that a proper website instills trust in a consumer. Some other things that a good design conveys to a person is that when they have an up to date site with current data, that person knows that business is on top of things.  When there is old data and the website is not current, it can reflect the practices of that business, meaning they won't be on top of the service they are providing.    
 
 08. What is the purpose of ***wireframing***?
-    > | ANSWER HERE |
+    > The purpose of wireframing is to design a webpage at a structural level. It is used to layout content and functionality on a page. Wireframing establishes the basic structure of the page before visual design and content are added.
 
 09. Do you think wireframes are worth the time, energy, and effort that they require? Why or Why not?
-    > | ANSWER HERE |
+    > Yes, I believe wireframes are worth the time, energy, and effort that they require because the best plans are laid out piece by piece.  Wireframing allows the concept of the webpage to develop. It demonstrates the functionality and flow of the webpage so during the coding process things will go smoother.
 
 10. Define the display `:flex property:`
-    > | ANSWER HERE |
+    > Flex property sets how a flex item will grow or shrink to fit in the space available in its flex container.
 
 11. What `CSS` properties affect the size of a box model?
-    > | ANSWER HERE |
+    > The CSS properties that affect the size of a box model include: borders, margin, padding, and the content itself. 
