@@ -1,12 +1,14 @@
 # CSS
 
+Day 2 notes
+
 * {
     is for all everything on page
 }
 
 body {
  for all stuff in body   
- always has a margin/to make it 0
+ always has a margin make it to 0
  margin:0
 }
 
@@ -48,3 +50,56 @@ will only apply class until max width is reached
     flex-direction: column;
 }
 }
+
+Day 3 notes
+
+Bootstrap
+
+make sure when using bootstrap to have your stylesheet link after the bootstrap link
+
+in developer tools, sources show all things for the project
+
+
+To start with the bootstrap grid, you need a container
+
+container has margins
+
+container-fluid goes to the edges
+
+section = rows
+
+div = column
+
+rows are broken into 12 segments
+
+using col, col's will evenly distribute through row
+
+cols can be given exact size to fit
+
+cols over 12 segments will wrap to next line
+
+you should always have a base col size with no infix 
+
+justify only works on what is dflexed ie. rows
+
+unsplash.com free pics 
+
+start and end in bootstrap no left and right
+
+img-fluid fixes image to fit in container
+
+py is pt and pb combined
+
+px is ps and pe combined
+
+col 12 col-md-6
+means when screen size is md to big col 6 is active
+when it is smaller than med col 6 is turned off and then col 12 is active
+
+reordering with bootstrap, put it in the col
+order-first
+order-last
+order 0-5
+
+
+
