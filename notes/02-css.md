@@ -102,4 +102,35 @@ order-last
 order 0-5
 
 
+Day 4 Note:
+
+Figma to wire frame
+
+low fidelity mock, mid fidelity mock, high fidelity mock
+
+container has margin
+container-fluid goes all the way to the edge
+
+containers = header, main, footer
+rows = section  
+col = div
+
+section.row*3 makes 3 sections with row class
+
+breakpoints in bootstrap
+
+col-6 col-md-3
+
+style:debug for layout 
+add class="debug" to body
+
+columns are used for the layout not the content
+
+p tags have a default margin
+
+media queries in css
+
+@media(min-width:768px){
+    .hero-row{change background image}
+}
 
