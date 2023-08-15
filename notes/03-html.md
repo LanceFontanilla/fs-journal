@@ -18,3 +18,9 @@ pictogrammers.com
 link  (snippet for mdi)
 class="mdi (type icon wanted)"
 
+week 2 day 1 Java Script
+
+use <script src "app.js"> <script> 
+
+load scripts at the end of body because they take the longest to load
+
