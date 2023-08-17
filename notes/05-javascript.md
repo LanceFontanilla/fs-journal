@@ -73,8 +73,18 @@ anonymous function
 array.forEach(banana word)
 sandwiches.forEach(sandwich =>){
     if(sandwich.quantity > 0){
-
+    }
 }
+
+Day 4 Java Script
+
+Zoo Keeper
+
+setInterval () //either input a single function or can do a call block and list out list of commands
+
+time is set in ms so 1000ms = 1sec
+
+switch statement
 
 
 

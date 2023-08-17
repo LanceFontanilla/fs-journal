@@ -134,3 +134,12 @@ media queries in css
     .hero-row{change background image}
 }
 
+
+Zoo Keeper
+
+css selector 
+
+main>section.row{   //targets all section.rows in main
+min-height: 50vh
+}
+

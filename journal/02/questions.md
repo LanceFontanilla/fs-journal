@@ -5,11 +5,11 @@
 
 02. What is the definition of a function?
 
-    > |A function is a subprogram designed to perform a task.
+    > A function is a subprogram designed to perform a task.
 
 03. What are the `SOLID` principles?
 
-    >The SOLID principles are object-oriented design concepts relevant to software development. 
+    > The SOLID principles are object-oriented design concepts relevant to software development. 
     
     SOLID is an acronym for:
 
