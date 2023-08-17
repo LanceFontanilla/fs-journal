@@ -26,7 +26,7 @@
     let fruit = ['apple', 'banana', 'pineapple', 'orange', 'strawberry']
     ```
 
-    > | ANSWER HERE |
+    > fruit.pop(2)
 
 05. Given these two objects: How could you add each to the others friends arrays?
 
@@ -43,7 +43,8 @@
     }
     ```
 
-    > | ANSWER HERE |
+    > you.push(Them)
+    them.push(You)
 
 06. Give an example of a JavaScript `Conditional`:
 
@@ -75,4 +76,7 @@
 
 10. Demonstrate a loop that prints the numbers between -100 and 100?
 
-    > 
+    > for (let i = -100; i <= 100; i++){
+        return i
+    }
+
