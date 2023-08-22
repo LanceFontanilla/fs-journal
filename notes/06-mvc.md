@@ -122,4 +122,22 @@ step 8 in style.css create your class styles to the way you want it to look
 
 step 9 above
 
-step 10 
+step 10 fix button onclick in Gachamon.js  `<button onclick = "app.GachamonsController.selectGachamon('$(this.name etc. etc.)')"  `
+
+step 11 in GachamonController.js pass the name in the selectGachamon(gachaname) function
+
+
+step 12 in services create GachamonService.js
+
+in GachamonService.js
+
+class GachamonService{
+    console.log ( this is the gachamon service)
+}
+export const gachamonService = new GachamonsService()
+
+
+step 13 in GachamonController.js  in selectGachamon function add 
+
+gachamonService.selectGachamon(gatchaName)
+const AppState.gachamons.find(gacha => gacha.name == gachaName)   
