@@ -137,7 +137,48 @@ class GachamonService{
 export const gachamonService = new GachamonsService()
 
 
-step 13 in GachamonController.js  in selectGachamon function add 
+step 13 in GachamonService.js  in selectGachamon function add 
 
 gachamonService.selectGachamon(gatchaName)
 const AppState.gachamons.find(gacha => gacha.name == gachaName)   
+
+step 14 in AppState create to make a bigger one you selected
+add activeGachamon = null
+
+step 15 in GachamonService 
+
+AppState.activeGachamon = selected Gachamon
+
+step 16 in Gachamon.js create new Get
+
+get ActiveTemplate (){
+    return ` etc etc 
+    `
+
+}
+
+step 17 in router.js
+
+create a new section in view to add the ActiveTemplate
+<section class="row" id="gachamon-activity ect etc.
+
+step 18 in GatchamonController.js
+drawActiveGachamon (){
+    const gachamon = AppState.activeGachamon
+    let activeContent = gachamon.ActiveTemplate
+}
+
+step 19 in AppState add below above activeGachamon = null
+
+/** @type {Gachamon}  this is the gachamon selected, by the user*/
+
+step 20 in drawActiveGachamon()
+
+add setHTML('gachamon-active',activeContent)
+
+step 21 call drawActiveGachamon when it is selected in GachamonController.js
+in constructor add
+
+AppState.on('activeGachamon',this.drawActiveGachamon)
+
+step 22 
