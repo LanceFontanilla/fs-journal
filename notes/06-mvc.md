@@ -181,4 +181,76 @@ in constructor add
 
 AppState.on('activeGachamon',this.drawActiveGachamon)
 
-step 22 
+step 22 in index.html change main and add
+//private viewport
+<div id='router-view' class="container">
+</div>
+add buttons / knob stuff
+<section class="etc etc."
+
+step 23 in selectGachamon in GachamonController.js
+
+gachaAchaMon() {
+    getGachamonService.getRandomGachamon()
+}
+
+step 24 in index.html add onclick = 'app.GachamonController gachaGachamon() role=button'
+
+step 25 in GachamonService  add getRandomGachamon() then draw it with AppState.Active 
+class GachamonService {
+
+    getRandomGachamon () 
+    etc. etc.
+
+}
+
+step 25 AppState.js add 
+/** @type (Gachamon []) */
+myGachamons = []
+
+step 26 in GatchamanController.js create drawGachamon function
+
+drawGachamon (){
+    const myGachamon 
+    etc etc
+}
+
+step 27 in index.html add a place to collect the gachamon
+
+section.row etc etc
+
+step 28 in gachamonController.js add listener
+
+step 29 in GachamanService add AppState.myGachamons.push(randomGachamon)
+
+also have to add AppState.emit('myGachamons')
+
+step 30 in GachamonService add stuff to make rares harder to get
+
+getRandomIndex() {
+    let rarities = 'common', rare. ultra-rare 
+    let roll = 0
+    for let = 1 etc etc.
+
+}
+
+add getRandomIndex to getRandomGachamon function
+
+add to local storage
+
+in utils folder there is a Store.js
+
+in GachamonService create a saveMyGachamon()
+
+saveMyGachamon(){
+    saveState('myCachamon',AppState.myGachamons)
+}
+
+add this.saveMyGachamon() to GetRandomGachamon()
+
+in AppState in init()
+
+add this.Gachamon = loadState ('myGachamon', [Gachamon])
+
+fixed classes with data objects (we should just start with data object)
+
