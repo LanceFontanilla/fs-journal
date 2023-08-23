@@ -292,7 +292,7 @@ export class CarsController{
 
 NEW THING!!
 
-create a new route object to change to the Cars Section of Greg's List
+6. create a new route object to change to the Cars Section of Greg's List
 in router at the bottom is the about page path, 
 
 path:'#/cars'
@@ -306,3 +306,111 @@ add a href = #/cars  //this will add a place to click to bring up the cars page
 
 in CarsController.js, console.log (AppState.cars) will bring up the array of cars in the console
 
+7. in CarsController.js drawCars()
+
+NEW THING!!
+moving function _drawCars() outside of the class makes it private.  putting the '_' is the visual that the function is private.  //it runs in the background
+
+function _drawCars(){
+    console.log ('drawing cars')
+  
+}
+
+as soon as the cars page loads you want to draw the cars.  so, put it in class CarsController's constructor
+
+export class CarsController {
+    constructor(){
+        console.log ('hello from the cars controller')
+        console.log ('we got cars', AppState.cars)
+        _drawCars()
+    }
+}
+
+add more to the function _drawCars to make it the way you want the page to look  
+
+
+function _drawCars(){
+    console.log ('drawing cars')
+    let cars = AppState.cars  //aliasing AppState.cars to just cars
+    let content = ''
+
+    cars.forEach(car => content += `$(car.make))  //the $(car.make) gets changed to carsTemplate see further below
+}
+
+still need to inject some HTML to the page.  where our id = '' goes
+
+in router.js draw out the html
+
+view: 
+
+/*html*// this tag allows the colors to look like it's html
+`<section>
+<div> </div>
+</section>
+`
+
+in index.html, draw out the cars page then put it into the get
+
+get CardTemplate ()
+return /*html*/ `copied the template from the index.html` but put it in the view in router.js
+
+change function _drawCars to change the car.CardTemplate //the get CardTemplate in Cars.js
+
+
+NEW THING!! 
+
+FORMS!!
+
+hard code form in index.html
+
+<form > 
+
+name = "make" //this matches the 
+
+</form>
+
+move form into car view in router.js
+
+forms have onsubmit = "app.CarsController.createCar()"//we want it to go to CarsController.js because its in our cars page
+
+in CarsController have a new function that creates a car 
+
+createCar (){
+    window.event.preventDefault()
+const form = window.event.target // this brings in the form 
+console.log ('creating car', form)
+const formData = {
+    make: form.make.value     //these are the key value pairs that directly reflect our models data
+}
+
+}
+
+const formData = getFormData(formEvent)
+
+
+need a service now to pass the info to
+
+create a CarsService.js
+
+class CarsService {
+createCar (formData){
+    let newCar = new Car(formData)  //need to run the form data through the constructor to have it show correctly
+    AppState.cars.push(newCar)
+
+    console.log (AppState.cars)
+}
+}
+
+export const carsService = new CarsService ()
+
+set AppState.on in CarsCOntroller.js
+
+AppState.on ('cars', _drawCars) //this is the listener to when a car gets created in the form.
+
+
+in createCar(formData) function  in CarsService.js create an emit so new cars are drawn to the page 
+
+
+in CarsController create a reset of form
+
+formEvent.reset
