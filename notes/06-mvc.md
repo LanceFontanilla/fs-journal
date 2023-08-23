@@ -254,3 +254,4 @@ add this.Gachamon = loadState ('myGachamon', [Gachamon])
 
 fixed classes with data objects (we should just start with data object)
 
+MVC Day 3 (Week 3 day 3)
