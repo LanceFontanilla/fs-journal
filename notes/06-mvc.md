@@ -255,3 +255,54 @@ add this.Gachamon = loadState ('myGachamon', [Gachamon])
 fixed classes with data objects (we should just start with data object)
 
 MVC Day 3 (Week 3 day 3)
+
+Greg's List
+
+1. Make Model (what the info looks like)
+    export class Car {
+        contstructor(data){ 
+            this.make = data.make
+            this.model = data.model
+            this.year = data.year
+        }
+    }
+
+2. In AppState create the instances with dummy data to draw to the page
+
+    cars=[
+    new Car{
+    make:
+    model:
+}
+    ]
+
+3. console log to see if things are working, where do you do it?  in controller 
+// controller is responsible for user inputs and what they see
+
+    create CarsController
+
+export class CarsController{
+    constructor () {
+        console.log ('this is the cars Controller')
+    }
+}
+
+4. CarsController, is run off of the router.  so in the router you add the CarsController as controller
+5. now you can see in the console, the CarsController's console.log
+
+NEW THING!!
+
+create a new route object to change to the Cars Section of Greg's List
+in router at the bottom is the about page path, 
+
+path:'#/cars'
+controller: CarsController,
+view: 'hello from the cars page'  //this is a test to see if things are routed properly
+
+//need a place in index.html to load the path for the cars page. using the about page as an example
+
+NAVLINKS
+add a href = #/cars  //this will add a place to click to bring up the cars page
+
+in CarsController.js, console.log (AppState.cars) will bring up the array of cars in the console
+
