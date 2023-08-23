@@ -308,15 +308,15 @@ in CarsController.js, console.log (AppState.cars) will bring up the array of car
 
 7. in CarsController.js drawCars()
 
-NEW THING!!
-moving function _drawCars() outside of the class makes it private.  putting the '_' is the visual that the function is private.  //it runs in the background
+* NEW THING!!
+* moving function _drawCars() outside of the class makes it private.  putting the '_' is the visual that the function is private.  //it runs in the background
 
 function _drawCars(){
     console.log ('drawing cars')
   
 }
 
-as soon as the cars page loads you want to draw the cars.  so, put it in class CarsController's constructor
+* as soon as the cars page loads you want to draw the cars.  so, put it in class CarsController's constructor
 
 export class CarsController {
     constructor(){
@@ -326,7 +326,7 @@ export class CarsController {
     }
 }
 
-add more to the function _drawCars to make it the way you want the page to look  
+* add more to the function _drawCars to make it the way you want the page to look  
 
 
 function _drawCars(){
@@ -339,7 +339,7 @@ function _drawCars(){
 
 still need to inject some HTML to the page.  where our id = '' goes
 
-in router.js draw out the html
+* in router.js draw out the html
 
 view: 
 
@@ -414,3 +414,54 @@ in createCar(formData) function  in CarsService.js create an emit so new cars ar
 in CarsController create a reset of form
 
 formEvent.reset
+
+have car save to local storage...  we do this in CarsService.js with a private function
+carsService.js deals with our data manipulation.
+
+function _saveCars(){
+    saveState('cars', AppState.cars)
+}
+
+* call this function in the: class CarsService function
+
+* after it gets saved in local storage we have to pull it out of the local storage and load it to the page.
+we do this in the AppState.js
+
+cars = loadState ('cars', [Car])
+
+* when we want to delete a car we have to know which specific car we want to delete 
+we do this by having an id property.
+
+we add this.id = generateId() in our export class Car{ } constructor (data) in Car.js 
+
+* now we create a deleteCar() function that passes it to the CarsService.js
+
+deleteCar(''){
+
+}
+
+in our Car.js we add a button that calls the deleteCar function
+
+
+class CarsService{
+
+    deleteCar(carId){
+        let foundCar = AppState.cars.find(car => car.id == carId)
+
+        let filteredCarArr = AppState.cars.filter(car => car.id != carId)
+
+        AppState.cars = filteredCarArr    // see notes in the lecture web build
+        _saveCars() // needs to be called here so it updates the local storage
+    }
+}
+
+
+* in CarsController we want to have a popup to have user verify that they want to delete the car
+    deleteCar(carId){
+        if (await Pop.confirm("Are you sure you want to remove this car")) {
+            console.log ('deleting', carId)
+            carsService.deleteCar(carId)
+        }
+    }
+
+
