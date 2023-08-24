@@ -726,3 +726,13 @@ unlockCase() {
 32. have to recall from local storage by commenting out the hardcoded data and 
 
 cases = loadState('cases')
+
+33. create form in index.html
+NEW!!! SELECT with OPTIONS  it's a dropdown menu!!
+
+34. make new cases and save to local storage
+
+in createCase we can set it as active case so be shown
+
+newCase.unlocked = true //make new case as unlocked
+AppState.activeCase = newCase  //makes it so new case made is the active case
