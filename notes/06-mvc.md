@@ -468,9 +468,9 @@ Day 4 MVC (week 3 day 4)
 
 Redacted
 
-1. start in model and instantiate in appState, 
+1. start in model and instantiate in "appState", 
 
-* create Case.js
+* create "Case.js"
 
 export class Case{
     constructor(data){
@@ -491,7 +491,7 @@ Copy / *@type {import('./modes.Values.js').Value[]} */ and make it relative to C
 
 /** @type {import('import('./models/Case.js').Case[])} */
 
-* build some cases for examples in AppState
+* build some cases for examples in "AppState"
 cases = [
     new Case {
         reportBody:"Bigfoot was spotted"
@@ -503,7 +503,7 @@ cases = [
     }
 ]
 
-3. create a CasesController and console.log in CasesController
+3. create a "CasesController" and console.log in "CasesController"
 
 export class CasesController{
     constructor(){
@@ -511,12 +511,12 @@ export class CasesController{
     }
 }
 
-4. need to mount Controller in the router
+4. need to mount Controller in the "router"
 - in router can create a new page or replace the HomeController, here we replaced the HomeController
 
 controller:CasesController,
 
-5. create a CasesService as a placeholder for now
+5. create a "CasesService" as a placeholder for now
 
 class CasesService {
 
@@ -542,7 +542,7 @@ export class CasesController{
 - under <main> is a good place to draw
 * in case-list section added and id="case-list"
 
-7. in Case.js create a getter
+7. in "Case.js" create a getter
 
 get ListTemplate(){
     return /*html*/ `
@@ -554,7 +554,7 @@ get ListTemplate(){
     `
 }
 
-8. in CasesController under _drawCases()  create the content '' and forEach to inject the list
+8. in "CasesController" under _drawCases()  create the content '' and forEach to inject the list
 
 function _drawCases(){
     console.log('drawing cases')
@@ -571,7 +571,7 @@ export class CasesController{
     }
 }
 
-9. create new getter to Compute
+9. create new getter in "Case.js" to Compute Report title, 
 
 * NEW! slice feature
 - in Case.js
@@ -579,3 +579,150 @@ export class CasesController{
 get ComputeReportTitle(){   //slice.(starting index, ending index)
     return this.reportBody.slice(0,15) + '...'
 }
+
+10. in getListTemplate adding selectable and an OnClick
+
+<div class = "d-flex justify-content-between" onclick=""
+
+11. in "CasesController"
+
+create setActive(caseId){
+    console.log
+    casesService.setActive(caseId)
+}
+
+12. in "CaseService" 
+
+pass the caseId to Case Service
+
+class CasesService {
+    setActive[caseId]{
+        let foundCase = appState.cases.find(caseObj => caseObj.id == caseId)
+        console.log('setting active', foundCase)
+    }
+}
+
+13. in AppState save the active case by making:
+- also copy type and make it null
+
+/**@type .......... Case|null */
+activeCase = null
+
+14. in "CaseService"
+- add AppState.activeCase = foundCase
+
+class CasesService {
+    setActive[caseId]{
+        let foundCase = appState.cases.find(caseObj => caseObj.id == caseId)
+        console.log('setting active', foundCase)
+        AppState.activeCase = foundCase
+    }
+}
+
+15. in "CasesController"
+- create function _drawActive
+
+function _drawActive(){
+    console.log('drawing active')
+}
+
+- then add AppState.on('activeCase',_drawActive)
+
+create setActive(caseId){
+    console.log
+    casesService.setActive(caseId)
+    AppState.on('activeCase', _drawActive)
+}
+
+16. in index.html draw active case view
+
+17. put activeCaseTemplate to a new get in "Case.js"
+
+get ActiveCaseTemplate(){
+return /* html */ `
+
+* paste what you made in index.html here and string interpolate the ${this.reportedDate} etc.
+
+`
+}
+
+18. in "CasesController" do more to the function _drawActive
+
+function _drawActive(){
+    console.log('drawing active')
+    let active = AppState.activeCase
+    setHTML('active-case',active.ActiveCaseTemplate)
+}
+
+19. in "Case.js" create a new get for the reported date view
+
+get ComputeReportDateView(){
+    let date = this.reportedDate
+    return date.toLocaleDateString("en-us", {weekday: long etc.etc.})
+
+}
+
+20. in "Case.js" create a new array for classified words
+
+const _classifiedWords = ["aliens", "IHOP", "people", "lizard", "rat"]
+
+21. in "Case.js" create a new get ComputeRedactedReportBody()
+
+get ComputeRedactedReportBody(){
+    let reportArr = this.reportBody.split(' ')
+
+    let redacedArr = reportArr.map(word=>{
+        if(_classifiedWords.includes(word.toLowerCase())){
+            return 'black boxes'
+        }
+        return word 
+    })
+    return redactedArr.join(' ')
+}
+
+22. changing CaseTemplate to redactedCaseTemplate and copying it and have and unredactedCaseTemplate
+
+23. in our caseController and create and if statement to handle the drawing of the redacted or unredacted version
+
+function _drawActive(){
+    console.log('drawing active')
+    let active = AppState.activeCase
+
+    if(active.unlocked == true){
+    setHTML('active-case',active.ActiveCaseTemplate)
+
+    }
+
+}
+24. create a button in getRedactedCaseTemplate to unlock/lock case
+
+25. in "CasesController" create an unlockCase() function that calls to our CaseService 
+
+unlockCase(){
+    caseService.unlockCase()
+}
+
+
+
+26. and in "CasesService" create unlockCase() function
+
+unlockCase() {
+    console.log('unlocking',AppState.activeCase)
+    let active = AppState.activeCase
+    active.unlocked = true
+    AppState.emit('activeCase')
+}
+
+27. Create new Save button in getTemplate with an onclick
+
+28. make a saveCase function in "CaseController" 
+
+29. in services make the SaveCase function also
+30. made changes to the lock and unlock and redacted/unredacted versions
+31. now we save to local storage in CaseService make a function _saveCases()
+    _saveCases(){
+
+    }
+32. have to recall from local storage by commenting out the hardcoded data and 
+
+cases = loadState('cases')
