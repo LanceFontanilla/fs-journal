@@ -468,7 +468,7 @@ Day 4 MVC (week 3 day 4)
 
 Redacted
 
-* start in model and instantiate in appState, 
+1. start in model and instantiate in appState, 
 
 * create Case.js
 
@@ -485,7 +485,7 @@ export class Case{
     }
 }
 
-* in appState instantiate a Case
+2. in "appState.js" instantiate a Case
 
 Copy / *@type {import('./modes.Values.js').Value[]} */ and make it relative to Case
 
@@ -503,7 +503,7 @@ cases = [
     }
 ]
 
-* console.log in CasesController
+3. create a CasesController and console.log in CasesController
 
 export class CasesController{
     constructor(){
@@ -511,10 +511,71 @@ export class CasesController{
     }
 }
 
-* need to mount Controller in the router
-- in router can create a new page or replace the HomeController
+4. need to mount Controller in the router
+- in router can create a new page or replace the HomeController, here we replaced the HomeController
 
 controller:CasesController,
 
+5. create a CasesService as a placeholder for now
 
+class CasesService {
 
+}
+
+export const casesService = new CasesService ()
+
+5. create a private draw function in CasesController and add the function in the CasesController
+
+function _drawCases(){
+    console.log('drawing cases')
+}
+
+export class CasesController{
+    constructor(){
+        console.log('cases controller',AppState.cases)
+        _drawCases() //add the _drawCases here
+    }
+}
+
+6. in index.html "draw out what it looks like"
+
+- under <main> is a good place to draw
+* in case-list section added and id="case-list"
+
+7. in Case.js create a getter
+
+get ListTemplate(){
+    return /*html*/ `
+
+    //paste what you drew in index.html here and change to add 
+    ${this.agency}
+    ${this.reportBody}
+    etc. etc.
+    `
+}
+
+8. in CasesController under _drawCases()  create the content '' and forEach to inject the list
+
+function _drawCases(){
+    console.log('drawing cases')
+    let cases = AppState.cases
+    let content = ''
+    cases.forEach(caseObj => content += caseObj.ListTemplate)
+    setHTML('case-list', content)
+}
+
+export class CasesController{
+    constructor(){
+        console.log('cases controller',AppState.cases)
+        _drawCases() //add the _drawCases here
+    }
+}
+
+9. create new getter to Compute
+
+* NEW! slice feature
+- in Case.js
+
+get ComputeReportTitle(){   //slice.(starting index, ending index)
+    return this.reportBody.slice(0,15) + '...'
+}
