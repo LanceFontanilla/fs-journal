@@ -255,7 +255,7 @@ add this.Gachamon = loadState ('myGachamon', [Gachamon])
 fixed classes with data objects (we should just start with data object)
 
 MVC Day 3 (Week 3 day 3)
-
+//SECTION - Gregs List
 Greg's List
 
 1. Make Model (what the info looks like)
@@ -463,5 +463,58 @@ class CarsService{
             carsService.deleteCar(carId)
         }
     }
+//SECTION -  Redacted Started
+Day 4 MVC (week 3 day 4)
+
+Redacted
+
+* start in model and instantiate in appState, 
+
+* create Case.js
+
+export class Case{
+    constructor(data){
+        this.id = generateId()
+        this.reportBody = data.report Body
+        this.reportedDate = data.reportedData ? new Date(data.reportedDate) : new Date()
+        
+         //need to massage line above for the case if they don't provide a date. should have a default value. we use a ternary that basically says, did they provide a date? pass the data, or create a new Date()
+                                                         
+        this.agency = data.agency
+        this.unlocked = data.unlocked
+    }
+}
+
+* in appState instantiate a Case
+
+Copy / *@type {import('./modes.Values.js').Value[]} */ and make it relative to Case
+
+/** @type {import('import('./models/Case.js').Case[])} */
+
+* build some cases for examples in AppState
+cases = [
+    new Case {
+        reportBody:"Bigfoot was spotted"
+        agency:'tree emoji'
+    },
+    new Case {
+        reportBody:"Aliens made contact"
+        agency:'emoji '
+    }
+]
+
+* console.log in CasesController
+
+export class CasesController{
+    constructor(){
+        console.log('cases controller',AppState.cases)
+    }
+}
+
+* need to mount Controller in the router
+- in router can create a new page or replace the HomeController
+
+controller:CasesController,
+
 
 
