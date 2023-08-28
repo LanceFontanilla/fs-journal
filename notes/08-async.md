@@ -42,9 +42,23 @@ const response = await fetch (URL)
 console.log (response)
 
 class MonsterService{
-    async getMonsters
+    
+    async getMonsters(){
+
+    const response - await fetch (URL)
+    const data = await response.json()
+
+    let newMonsters = data.data.map(monster => new Monster(monster))
+    }
+
 }
 
+
+* new way to get data, AXIOS
+
+- need new script tag axios
+
+const response = axios.get(SAME URL)
 
 
 
