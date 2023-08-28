@@ -13,7 +13,7 @@
 
 04. What are some of the benefits of the `Proxy` object that we are using in our structure for applications?
   
-  > | ANSWER HERE |
+  > The Proxy object is a way to intercept and modify interactions of objects in our code.  It acts as a proxy for other objects, allowing you to intercept and customize operations like property access, assignment and method calls.
 
 05. What the difference between a `class` and an instance of a `class`?
   
@@ -33,8 +33,8 @@
 
 09. What is the job of the `Service` in `MVC`?
   
-  > 
+  > The job of the service layer in MVC is to handle the business logic of the application. This is where the functionality of the application resides.
 
 10. What is the job of the `Model` in `MVC`?
   
-  > | ANSWER HERE |
+  > The model's job is to represent the core information of the application.  
