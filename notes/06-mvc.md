@@ -736,3 +736,4 @@ in createCase we can set it as active case so be shown
 
 newCase.unlocked = true //make new case as unlocked
 AppState.activeCase = newCase  //makes it so new case made is the active case
+
