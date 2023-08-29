@@ -205,10 +205,199 @@ can copy the object from the console by right-clicking and copying.  then you ca
         AppState.cars.ForEach(car => template += cars.drawCars)
     }
 
-12. Now create our Form
+12. Now create our Form in index.html
 
     BootStrap Collapse has 2 parts:
     data-bs-toggle = "collapse" // what the component is doing
     data-bs-target = "name of ID that matches the div that its collapsing"
+    tie create button to app.CarsController.createCar()
 
+13. Now make a createCar() in CarsController in a try/catch
+   
+   
+    createCar(){
+    try {
+        window.event.preventDefault()
+        const form = window.event.target
+        const formData = getFormData(form)
+        await carsService.createCar(formdata)
+        console.log('creating car')
+    }catch{
+
+}
+
+    }
+
+14. in class carsService make a createCar(formData){
+
+}
+
+    async createCar(formData){
+        // Note any time we do a POST request, we will be supplying some kind of body
+        // Note the 'body' is what we are trying to insert into the API
+        const res = await _sandboxApi.post('api/cars', formData)   //res is short for response
+        console.log (res.data)
+
+    }
+
+15. in env.js
+
+supply the domain, audience and client id info
+
+16. in env.js edit the baseURL
+
+17. in async CreateCar in CarsService 
+
+   - change await _sandboxApi.post to api.post
     
+   - const res = await api.post('api/cars', formData)
+
+   -then add  const newCar = new Car(res.data)  //this adds the newly added car to the AppState
+
+18. UPDATE / Edits are tricky
+
+move Form to the model
+
+    use static instead of get
+
+    static CreateCarForm (){
+    return `
+        paste form here
+
+    `
+}
+
+19. add onclick = "app.drawCarsController" to the create listing button
+
+20. in CarsController add drawCreateForm
+
+    drawCreateForm(){
+
+        setHTML('carFormCollapse', Car.CreateCarForm()) //have to invoke
+
+    }
+
+
+21. add button to edit in the CardTemplate
+
+22. create a get ComputeEditButton so that only the correct logged account can edit the car
+
+    get ComputeEditButton(){
+    if (!AppState.account == null || AppState.account.id != this.creatorID) return ''
+
+        if (AppState.account.id == this.creatorId){
+            return ` <button> </button>
+
+            `
+        }
+    }
+
+
+23. add AppState.on('account' , _drawCars) in CarsController
+
+24. add drawEditForm(){  //in cars controller
+    console.log('edit car')
+}
+
+    drawEditForm(carID){
+        console.log"('edit car', CarId)
+        carService.setActive(carId)
+
+    }
+
+
+25. in get ComputedCarForm pass down this.id from car to know which car you are editing. shown in step above and in our button
+
+
+26. 
+    setActive(carId){
+
+}
+
+*  set active = null in AppState
+
+27. create a function _drawEditForm(){ in carsController
+
+}
+
+28. create Appstate.on ('activeCar' _)
+
+29. copy static and make it a getEditCarForm
+
+    add value = (this.make)
+
+30. change drawEditForm to let active = AppState.activeCar and SetHTML
+    drawEditForm(carID){
+        console.log"('edit car', CarId)
+        let active = AppState.activeCar
+        setHTML...
+    }
+
+in edit car form. need to change the get button
+
+
+now create and 
+    editCar(){
+    try {
+        window.event.preventDefault()
+        const form = window.event.target
+        const formData = getFormData(form)
+        carService.editCar(formData)
+
+        form.rest()
+        bootstrap.Collapse.etc etc.
+        console.log ('edit car')
+
+    }catch{
+
+    }
+}
+
+
+async editCar (carId)  //pass the editing car id
+
+in carsService add put to editCar
+
+    async editCar(formData, carID){
+        console.log(formData, carId)
+
+        const res = await api.put('api/cars/$(carId)', formData)
+
+        const updatedCar = new Car(res.data)
+        let originalCarIndex = AppState.cars.findIndex(car => car.id == carId)
+
+        AppState.cars.splice(originalCarIntex, 1, updatedCar)
+        AppState.emit('cars')
+    }
+
+    gregslist is the CRUD manual
+
+* DELETE
+
+
+Make a delete button only the person who created the listing can delete. go to your model page and make a getComputeDeleteButton
+
+    get ComputeDeleteButton(){
+        if (AppState.account == null || AppState.account.id != this.creatorId) return ''
+        return `<button onclick = app.CarsController.deleteCar(${this.id}) > 
+    }
+
+in CarsController create async deleteCar(carId){}
+
+    async deleteCar(carId){
+
+        if(await Pop.Cnfirm)
+    }
+
+add button to template
+
+in CarsService create deleteCar(carId)
+
+    async deleteCar(carId){
+        const res = await api.delete('api/cars.$(carId)')
+
+        const filteredArray = AppState.cars.filter(car => car.id != carId)
+        AppState.cars = filteredArray
+
+
+    }
