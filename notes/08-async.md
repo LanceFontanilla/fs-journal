@@ -386,7 +386,7 @@ in CarsController create async deleteCar(carId){}
 
     async deleteCar(carId){
 
-        if(await Pop.Cnfirm)
+        if(await Pop.Confirm)
     }
 
 add button to template
