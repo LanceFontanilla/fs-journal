@@ -60,5 +60,6 @@ class MonsterService{
 
 const response = axios.get(SAME URL)
 
-
+WEEK 4 DAY 2
+CRUD METHOD
 
