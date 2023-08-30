@@ -450,3 +450,12 @@ _variable.css can change their values
 9. in Spell.js create a static SpellListTemplate
 
 10. in controller create a get oneSpell and in Spell.js add the onclick for the function
+
+11. in AppState add activeSpell = null
+
+12. draw spellList
+
+
+
+
+
