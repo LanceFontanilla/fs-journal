@@ -402,3 +402,51 @@ in CarsService create deleteCar(carId)
     }
 
     WEEK 4 DAY 3
+
+update the bootstrap css
+
+_variable.css can change their values
+
+1. make new service, DndSpellsService -add axios at top
+
+    const dndapi = axios.create({
+        baseURL: 'https://www.dnd5eapi.co/api/'
+        timeout:5000
+    })
+    
+    
+    class DndSpellsService {
+
+        async getSpells (){
+            const res = await dndapi.get('spells')   //this is where you append to the baseURL
+            console.log('got spells', res.data)    //res.data is what axios creates, always look at res.data
+        }
+
+    }
+
+    export const dndSpellsService = new DndSpellsService
+
+2. make new controller
+
+    add the getSpells() in here
+
+3. make your model
+    - look at the sandbox and see what the model looks like
+
+4. in AppState
+
+    SpellList = []
+
+5. in Service 
+
+    add AppState.spellList = res.data...
+
+6. in controller draw spell list
+
+7. in router create your view section for the spells
+
+8. add AppState.on in the controller
+
+9. in Spell.js create a static SpellListTemplate
+
+10. in controller create a get oneSpell and in Spell.js add the onclick for the function
