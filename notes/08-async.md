@@ -458,4 +458,7 @@ _variable.css can change their values
 13. new controller and new service to talk to sandbox
 
 
+pokemon?limit=151 for original 
+
+image is like damage
 
