@@ -455,7 +455,7 @@ _variable.css can change their values
 
 12. draw spellList
 
-
+13. new controller and new service to talk to sandbox
 
 
 
