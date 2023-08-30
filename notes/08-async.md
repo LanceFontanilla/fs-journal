@@ -106,9 +106,9 @@ GregsList Async
     }
 
 3. use AxiosService by creating an Axios instance in CarsService.
-    const sandboxApi = axios.create{(
-        baseURL: "https://sandbox.codeworksacademy.com"   //this is our base url we then append the API's to this URL
-        timeout: 8000  // if this takes longer than 8 seconds throw and error
+    const sandboxApi = axios.create({
+        baseURL: "https://sandbox.codeworksacademy.com",   //this is our base url we then append the API's to this URL
+        timeout: 8000  // if this takes longer than 8 seconds throw an error
     
     )}
 
@@ -399,5 +399,6 @@ in CarsService create deleteCar(carId)
         const filteredArray = AppState.cars.filter(car => car.id != carId)
         AppState.cars = filteredArray
 
-
     }
+
+    WEEK 4 DAY 3
