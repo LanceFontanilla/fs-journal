@@ -464,3 +464,38 @@ image is like damage
 
 Week 4 Day 4
 
+Queries of APIS
+
+* queries start with ?
+* then the parameter
+* then your search term
+* join parameters with '&'
+
+NASA APOD
+
+1. make a nasaService
+2. make a controller
+3. tie it to the router
+4. in controller getApod() with try catch
+5. in services create axios instance
+    - new way to create axios instance
+    - added params:{
+        'api_key': 'whatever_the_key_is'
+        'date' : 2012-12-13  // you only really want things that you want hard coded into your baseURL
+    }
+    
+6. add in controller constructor add this.getApod() //this runs the function on page load
+7. check the sandbox model to see what you want your model to look like
+8. create your class constructor model in Apod.js
+9. in AppState activeApod = null  //this allows us to save the data to the AppState
+10. in service class NasaService add AppState.activeApod = new Apod()   then console.log it
+11. in controller draw it by function _drawApod()
+    - in class constructor AppState.on('activeApod', _drawApod)
+12. added the nasa img as the background in the function _drawApod
+13. add sandbox keys to the env.js so you can get it off the page
+14. draw the page the way you like it in the index
+15. *** Add the id = ' ' to the section
+16. copy the html you drew and put it in the model as get ActiveTemplate()
+17. in the controller in our function _drawApod added the setHTML and setText for the copyright
+18. adding class="apod-header" and class"apod-body" and creating them in CSS
+19. 
