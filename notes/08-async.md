@@ -498,4 +498,24 @@ NASA APOD
 16. copy the html you drew and put it in the model as get ActiveTemplate()
 17. in the controller in our function _drawApod added the setHTML and setText for the copyright
 18. adding class="apod-header" and class"apod-body" and creating them in CSS
-19. 
+19. create input type="date" and add an onchange and have it go to new getApodByDate() function in the controller
+20. pass date to the service by adding nasaService.getApodByDate 
+21. in service async getDataApodByDate(dateValue) pull data from api then pass data through the model to redraw the page
+22. login to save the data to the sandbox
+    add user in AppState
+23. create a button to post to the sandbox to save
+24. create a sandbox controller to tie the button to
+25. add onclick to the save button to addFavoriteApod()
+26. in sandbox controller create the addFavoriteApod() method
+27. OFF CANVAS, for the saved list
+28. create a button for the saved list <button data-bs-toggle> make sure to add the off canvas id in it
+29. figure out what the favorite apods will look like and draw it inside the Off Canvas 
+    and then move it to the model in get FavoriteTemplate. and string interpolate it
+30. add the id = sandboxApods in the OffCanvas
+31. in SandboxApodService in the addFavoriteApod add letApod = new Apod
+32. in sandboxController draw the sandboxApods we want to draw when we ever add new ones
+33. add AppState.on()
+34. in sandboxService add AppState.emit()
+35. in controller drawSandboxApods let apods - AppState.sandboxApods, let content = '' apods.forEach(apod => content += apod.   
+    FavoriteTemplate.)
+36. in our Sandbox
