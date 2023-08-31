@@ -518,4 +518,27 @@ NASA APOD
 34. in sandboxService add AppState.emit()
 35. in controller drawSandboxApods let apods - AppState.sandboxApods, let content = '' apods.forEach(apod => content += apod.   
     FavoriteTemplate.)
-36. in our Sandbox
+36. in our Sandbox we getFavoriteApods() //this goes out to the sandboxApi and pulls all our saves
+37. add AppState.on('account' , _getFavoriteApods) in Sandboxcontroller to wait for login before it tries to pull fave apods
+38. map out favorite Apods in getFavoriteApods  let mappedArr = res.data.map(dataObj => new Apod )
+39. create get FavoriteTemplate() in Apod.js add delete button with onclick to the SandboxController.delete with '${this.id}'
+40. in sandbox controller make a deleteApod that passses the apodID deleteApod(apodId)
+41. in sandbox service make deleteApod that deletes it off our sandbox api
+42. adding AppState.sandboxApods = AppState.sandboxApods.filter(apod => apod.id != apodId) redraws once it is deleted
+43. in getFavoriteTemplate() create an onclick to the picture to redraw the saved image to the main page
+    - the onclick="app.NasaController.getApodByDate('${this.date}')"
+44. in NasaController in the getApodByDate have to fix things to get it to work
+    - pass in date  async getApodByDate(date)
+    - setup an if statement to pass the date. the else would be the original date
+45. button to take off the elements that have text
+    - in AppState create an isVisible = true
+    - identify all the elements you want to hide, make sure they all have id's
+    - in NasaController create function _drawElemDisplay()
+46. in NavLinks create a button to toggle and add onclick to the NasaController toggleDisplay() function
+47. in NasaController create a toggleDisplay method in class NasaService()
+48. in NasaController class add AppState.on ('isVisible', _drawElemDisplay)
+
+* checkpoint* dynamically render something off the state of a boolean
+
+
+
