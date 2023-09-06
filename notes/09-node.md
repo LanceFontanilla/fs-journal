@@ -62,10 +62,60 @@ Week 5 day 2 Lecture, real day 2 lecture
     mongo is our ORM
 
     getCars() {
-        const cars = await dbContext.Cars.find() //this "mongo" Sfind returns all cars not just one 
+        const cars = await dbContext.Cars.find() //this "mongo" find returns all cars not just one 
         return cars
     }
 6. remove Car
     
 
 Week 5 Day 3 Lecture
+Data Relationships
+
+1:1
+1:Many
+Many:Many
+
+1. put in your Connection String in env.js
+* MongoDB Collections are where are data goes
+2. Lines 22-26 comment out in Startup.js
+3. create Schema in Exhibit.js //new "model"
+4. create Exhibits controller
+    * start with .post
+    * createExhibit(request, response, next)
+5. register the schema in DbContext.js
+    * Exhibits = mongoose.model('Exhibit', ExhibitSchema)
+6. create Exhibits service
+    async CreateExhibit()
+7. open up Postman
+    * in Postman, New Collection
+    * Zookeeper NODE
+    * POST Create Exhibit
+    * Click Body, change text to JSON
+8. create Get request in Controller and Services
+    * get
+9. in Postman add collection for get Exhibits
+10. in async getExhibits in controller add const query = req.query 
+11. pass query into getExhibits in services
+12. can use debugger to see properties of elements
+13. create Animal Schema in Animal.js
+14. create Animal Controller and Service
+15. in Animal Schema setup a virtual which allows us to populate additional property to the schema
+    
+    * in Animal schema add
+    {timestamps: true, toJSON: {virtuals: true}}
+
+    * in Animal Schema
+        AnimalSchema. virtual('exhibit')
+        localField: 'exhibitId',
+        ref:'Exhibit',
+        foreignField: '_id'
+        justOne: true
+
+16. in animal service in getAnimals
+    add populate('exhibit', 'biome emoji') to the const animals = await dbContext
+
+17. in createAnimal add await newAnimal populate('exhibit')
+18. 
+
+
+
