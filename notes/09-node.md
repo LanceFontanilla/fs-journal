@@ -1,6 +1,6 @@
 # Node
 
-Week 5 day "2" Monday was a holiday
+Week 5 day "2" Monday lecture
 
 node.js and express this week
 
@@ -48,3 +48,24 @@ localhost:300
 mongodb+srv://lancefontanilla:<password>@cluster0.n07edxt.mongodb.net/?retryWrites=true&w=majority
 
 password:  M1P4TkGzyRWPf1Rg
+
+Week 5 day 2 Lecture, real day 2 lecture
+
+1. Make CarsController
+2. createCar
+3. use postman to test instead of building a front end to test servers
+4. create model
+    * exporting schema 
+    * register schema with database in DbContext.js
+    
+5. create CarsService
+    mongo is our ORM
+
+    getCars() {
+        const cars = await dbContext.Cars.find() //this "mongo" Sfind returns all cars not just one 
+        return cars
+    }
+6. remove Car
+    
+
+Week 5 Day 3 Lecture
