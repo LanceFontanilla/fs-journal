@@ -9,7 +9,7 @@
 
 03. What does `ORM` stand for? Which `ORM` do we use when interacting with MongoDB
 
-  > ORM stands for Object Relational Mapping.  We use node.js to interact with MongoDB.
+  > ORM stands for Object Relational Mapping.  We use mongo as our ORM to interact with MongoDB.
 
 04. Which two `HTTP` request types include a body?
 
