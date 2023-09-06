@@ -115,7 +115,28 @@ Many:Many
     add populate('exhibit', 'biome emoji') to the const animals = await dbContext
 
 17. in createAnimal add await newAnimal populate('exhibit')
-18. 
+
+* restful api conventions 
+* Best Naming conventions for APIs
+
+18. another get request in Exhibits controller
+    .get('/:exhibitId/animals', this.getAnimalsByExhibitId(query))
+    //this is for best practice naming convention
+
+    *getAnimalsByExhibitID(req, res, next){  //create in AnimalsService also
+
+    }
+
+19. create .put in exhibits controller
+    and edit exhibits in services
+
+    * Null Check
+    If(!originalExhibit) throw new Error(`Unable ot find exhibit at ${exhibitId})
+
+20. 
+
+
+
 
 
 
