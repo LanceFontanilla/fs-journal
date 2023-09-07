@@ -142,3 +142,23 @@ Many:Many
 
 ?biome=tropical&biome=desert <--- this syntax will give us all of our animals in the tropic AND desert biomes
 
+
+Week 5 Day 4 
+* open projects as workspace
+
+* in server env.js enter Auth_Domain: Auth_Audience and Auth_Client_Id
+
+* copy and paste in client folder env.js
+
+* start server
+* start client
+
+
+* login then in network tab in developer tools
+    should have:
+    token
+    userinfo
+    account
+
+
+
