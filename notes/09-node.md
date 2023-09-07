@@ -90,7 +90,7 @@ Many:Many
     * in Postman, New Collection
     * Zookeeper NODE
     * POST Create Exhibit
-    * Click Body, change text to JSON
+    * Click Body, then select RAW change text to JSON
 8. create Get request in Controller and Services
     * get
 9. in Postman add collection for get Exhibits
@@ -135,8 +135,10 @@ Many:Many
 
 20. 
 
+//query syntax
+
+?galaxyId=64f8e232bc7597aac3b9080c
 
 
-
-
+?biome=tropical&biome=desert <--- this syntax will give us all of our animals in the tropic AND desert biomes
 
