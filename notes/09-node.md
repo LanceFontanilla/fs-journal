@@ -183,4 +183,10 @@ Week 5 Day 4
 
 5. make a .get
 6. when the .get is above the .use it allows the user to getBirds before logging in but this makes it so the UserInfo is not passed
-7. 
+7. .getBirdById
+8. make BirdWatcher schema (many to many relationship)
+    accountId (type: Schema.Types.ObjectId, required: true, ref:'Account')
+    birdId (type:Schema.Types.ObjectId, required: true, ref:'Bird')
+9. remove birdwatcher //this takes away the relationship between the bird and watcher
+10. * New Forbidden when trying to delete, only users who created relationship can delete
+11. 
