@@ -137,8 +137,8 @@ Many:Many
 
 //query syntax
 
+//NOTE - this is for queries
 ?galaxyId=64f8e232bc7597aac3b9080c
-
 
 ?biome=tropical&biome=desert <--- this syntax will give us all of our animals in the tropic AND desert biomes
 
@@ -153,12 +153,34 @@ Week 5 Day 4
 * start server
 * start client
 
-
 * login then in network tab in developer tools
     should have:
     token
     userinfo
     account
 
+* try avoiding working across the stack and just work in server or client
+* close files and folders for good housekeeping
 
+* delete values folder/files don't need them, they are just examples
 
+1. build schema for bird in Bird.js
+    * reporterId:{type: Schema.Types.ObjectId, ref: 'Account', required: true}
+    //this is the person first posting the bird, need to use Schema.Types.ObjectId because its made up data and not the server assigned ObjectID
+    * add virtuals
+
+2. create BirdsController and BirdsService
+3. load up postman
+4. in BirdsController need to .use() middleware 
+    .use((request, response, next)) => {
+        logger.log('middleware')
+        next() //pushes to the very next action
+    }
+
+    .use(Auth0Provider.getAuthorizedUserInfo)//grabs login from Auth0 
+* go to token preview access token copy
+* click authorization under collection to add to entire collection
+
+5. make a .get
+6. when the .get is above the .use it allows the user to getBirds before logging in but this makes it so the UserInfo is not passed
+7. 
