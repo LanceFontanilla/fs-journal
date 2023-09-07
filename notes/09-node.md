@@ -189,4 +189,12 @@ Week 5 Day 4
     birdId (type:Schema.Types.ObjectId, required: true, ref:'Bird')
 9. remove birdwatcher //this takes away the relationship between the bird and watcher
 10. * New Forbidden when trying to delete, only users who created relationship can delete
-11. 
+ 
+when cloning down someone elses repository need to:
+create env file
+npm i install installs packages
+
+make sure you can login: under network tab check 200 OK
+
+
+
