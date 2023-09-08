@@ -38,3 +38,4 @@
 10. What is a ***virtual property***?
 
   > A virtual property is a property whose behavior can be overridden within an inheriting class. This concept is an important part of the polymorphism portion of Object Oriented Programming.
+
