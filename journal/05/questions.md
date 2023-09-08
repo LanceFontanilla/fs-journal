@@ -29,11 +29,11 @@
 
 08. The ______ pipeline delivers information from the client while the ______ pipeline returns it. Fill in the blanks. 
 
-  > | ANSWER HERE |
+  > Upstream delivers info from the client, downstream returns it. ???
 
 09. Demonstrate the pattern that is used to include a request query with the client's `HTTP` request providing the property `tag` and the value `winter`.
 
-  > | ANSWER HERE |
+  > I don't know what this means. Something like this...   ?tag=winter
 
 10. What is a ***virtual property***?
 
