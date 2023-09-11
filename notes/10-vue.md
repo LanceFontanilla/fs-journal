@@ -31,9 +31,24 @@ Vue handles our draw function
 
 App.vue has the header and footer and main router .view
 
-Reactivity
+Reactivity in Vue is opt-in, you have to opt-in
+
+3-4 different ways to make it reactive
+
+1. let health = ref(100) //make health a reference which makes it an object.  Not recommended because we don't mess with data in the controller.  
+    
+    
+    * property, "_____" was accessed during render but is not defined on instance, NOT IN AppState
+    * only objects can be reactive
+    * console doesn't clear errors, only on refresh it clears
+
+2. const health = computed(() => AppState.health) //computed is the Get
+
+ctrl space bar to import files
+
+* FoodItem v-for="item in ____"
 
 
-
-
+fork vue-playground
+npm i
 
