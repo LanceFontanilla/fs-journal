@@ -52,3 +52,6 @@ ctrl space bar to import files
 fork vue-playground
 npm i
 
+
+Week 6 Day 2 Lecture
+
