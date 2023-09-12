@@ -74,7 +74,7 @@ Week 6 Day 2 Lecture
 6. in AppState 
     /**@type movie[] */
     movies:[]
-7. in Movie.js in return add movies : computed(() => AppState.movies)
+7. in HomePage.vue in return add movies : computed(() => AppState.movies)
 8. in Movie.js create template 
     <div v-for="movie in movies" :key="movie.id" class = "col-md-3"
     {{movie.title}}
@@ -85,6 +85,7 @@ Week 6 Day 2 Lecture
     <MovieCard :movie="movie"/> in homepage
 
     copy and paste template into MovieCard.vue
+    
     create props: {movie: (type: Movie, required:true)}, // this sets up the component to TAKE in data
 
 10. in Movie.js create new section row for more pages at the top
@@ -119,6 +120,6 @@ Week 6 Day 2 Lecture
 
 22. create changePage with search
     add to buttons
-        
+
 
 
