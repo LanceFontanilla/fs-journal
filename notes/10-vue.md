@@ -125,3 +125,54 @@ Week 6 Day 2 Lecture
 
 Week 6 Day 3 Start of lecture
 Greg's List Again!
+
+1. fill out env.js info pulled from sandbox like normal
+2. try logging in. verify token userinfo account in network tab 
+3. HomePage, and NavBar, and AppVue change footer fix things for the page
+4. Difference in pages and components, pages get registered in router.js
+5. in router.js create path: '/cars'
+6. Create CarsPage.vue in pages
+7. in HomePage create router-link for cars
+8. create button cars link via code 
+    * create function goToCarsPage()
+    - const router = useRouter()
+        return{
+            goToCarsPage()
+            //NOTE - router push should be used only for automatically navigating the user when certain code processes are done
+            router.push({name:'Cars'})
+        }
+9. create car model in Car.js
+10. create CarsService.js  //no difference from Vanilla JavaScript
+11. in CarsPage.vue create getCars with onMounted
+        in setup(){
+            onMounted(()=> {
+                getCars()
+            })
+        }
+        async function getCars(){
+            try
+        }
+12. in CarsService create getCars api.get  
+13. in AppState create cars[]  // puts cars into our AppState
+    * when mapping make sure to check your array 
+14. in CarsPage  //pulls cars from our AppState to put on page
+    return{
+        cars:computed(()=> AppState.cars)
+    }
+
+    build out some template in CarsPage for cars to be displayed
+    then use v-for="car in cars" :key="car.id" to iterate over the array to display
+    {{car.make}} {{car.model}} //makes sure data is accessible and usable
+    <carCard
+15. make CarCard.vue component and move template from CarsPage
+    after pasting template in template you need to setup props
+
+16. in CarCard.vue component in 
+    export default{
+        props: {car: {type: Car, required: true}
+    }
+17. in CarsPage pass the prop down in the CarsCard. 
+    need the object car (not the whole array) by binding :car ="car" from the v-for loop
+    <CarsCard :car="car"/>
+18. in CarCard complete the template and make it look nice
+19. 
