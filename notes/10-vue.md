@@ -213,7 +213,36 @@ Greg's List Again!
 31. had to add v-if='active-car' to fix it trying to load before there is an active car
 32. add v-else loading
 
+33. adding form to CarsPage to create a new car
+    * create CarForm component
+    * add it to CarsPage with <CarForm />
+34. in setup() return 
+    createNewCar()
+35. add v-model = "carData. ____" in the form
+    add const carData = ref('')
+    add await carsService.create car
+36. in CarsService add createCar
+    don't forget to push the car through the model to display 
+    
+    in CarForm add carData.value = null to get form to reset on submit 
+    add const router = useRouter()
 
+    in createCar add 
+    const newCar = new Car(res.data)  //this is so we can go to the details page
+    AppState.cars.push(newCar)        //when we submit but we need the carId
+    return newCar
+
+    in CarsPage function we add the
+    router.push({Params: })
+
+37. add delete button and create deleteCar function
+
+38. after delete router push back to the Cars page
+    * 
+
+39. to the delete button, add v-if so only shows when you own the car
+    add account to the return 
+40. 
 
 
 
