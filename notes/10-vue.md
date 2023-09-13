@@ -123,3 +123,5 @@ Week 6 Day 2 Lecture
 
 
 
+Week 6 Day 3 Start of lecture
+Greg's List Again!
