@@ -175,4 +175,48 @@ Greg's List Again!
     need the object car (not the whole array) by binding :car ="car" from the v-for loop
     <CarsCard :car="car"/>
 18. in CarCard complete the template and make it look nice
-19. 
+19. add functionality to click car and go to details page
+20. in CarCard add <router-link> to home page for now to test functionality
+    <router-link to:{name:} 
+21. create CarsDetailsPage
+    this is the details for the car page
+22. in router create 
+    path:'/cars/:carId'
+    name:"CarsDetail"
+23. fix the router link 
+    to="{name:'Car Details', params:{carId: car.id}}"
+24. when we click the car it brings us to the page with car.id in url
+    we need to draw the car details and pages should handle the getting of data they
+    require to show/use and nothing more
+25. use onMounted(()=>{
+    getCarById
+    })
+    async function getCarById(){
+        try{
+            await carsService.getCarById(carId)
+        }catch error
+    }
+    return{
+        cars: computed(()=> AppState.cars)
+    }
+
+    * add const route = useRoute() above unMounted(())
+    we use route to pull the carId so add 
+    const carId = route.params.carId  //add this above await carsService.getCarById 
+
+26. create getCarById in CarsService
+27. in AppState add activeCar = 
+28. in CarDetails Page add
+    activeCar: computed(() =>)
+29. Add AppState.activeCar = null //to fix the showing of wrong data for a split second
+30. fix CarsDetails page to make it pretty
+31. had to add v-if='active-car' to fix it trying to load before there is an active car
+32. add v-else loading
+
+
+
+
+
+
+
+
