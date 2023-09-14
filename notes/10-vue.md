@@ -213,6 +213,7 @@ Greg's List Again!
 31. had to add v-if='active-car' to fix it trying to load before there is an active car
 32. add v-else loading
 
+
 33. adding form to CarsPage to create a new car
     * create CarForm component
     * add it to CarsPage with <CarForm />
@@ -242,7 +243,8 @@ Greg's List Again!
 
 39. to the delete button, add v-if so only shows when you own the car
     add account to the return 
-40. 
+
+Week 6 Day 4
 
 
 
