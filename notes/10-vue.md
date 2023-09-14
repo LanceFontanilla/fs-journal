@@ -287,4 +287,63 @@ artTerminal
     * coverImg: computed()=> url(${props.project.coverImg}) 
     - make sure props is passed in "setup(props)"
 * "scoped" is used for that component only and not globally
-21.  
+21. create ModalWrapper component
+    this will allow us to reuse the modal component 
+22. in appView add the ModalWrapper in the footer to test
+23. in ModalWrapper component add
+    <slot name=header>
+    can have whatever in here
+    </slot>
+    <slot name=body>
+    can have whatever in here
+    </slot>
+    <slot name=footer>
+    can have whatever in here
+    </slot>
+     in AppVue.     
+    <ModalWrapper>
+    can pass whatever you want in between
+    </ModalWrapper> 
+     in AppVue
+    you can add a template and in template pass the id of whichever slot you want
+in ModalWrapper
+    add prop: showButton
+
+    add id to the modal div 
+
+24. in HopePage add new div at top with ModalWrapper with form and create project
+
+25. in ProjectCard add data-bs-toggle for modal data-bs-target and add @click setActiveProject)(
+)
+26. in ProjectCard create
+    setActiveProject
+27. in ProjectsService create
+    setActiveProject(projectId){
+        const project = AppState.projects.find(project => project.id == projectId)
+    }
+28. in AppState
+    create activeProject = null
+29. in AppVue
+    add activeProject computed in return
+30. create ActiveProjectDetails
+    add activeProject computed in here instead
+31. add <ActiveProjectDetails/> in AppVue template
+32. style template for ActiveProjectDetails
+33. add v-if activeProject so it doesn't error trying to render nothing
+34. create ProfilePage.vue
+35. add path for ProfilePage in router
+36. add router-link in projectCard 
+37. add the router-link in ActiveProjectDetails 
+38. add @click=closeModal in ActiveProjectDetails
+    in return create closeModal()
+    in projectCard add @click.stop 
+    removed bs-toggle-modal and data-bs-target
+    in SetActiveProject added code to fix the modal opening when clicked
+39. ProfilePage.styling
+    
+
+
+
+
+
+
