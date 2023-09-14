@@ -246,8 +246,45 @@ Greg's List Again!
 
 Week 6 Day 4
 
+artTerminal
 
-
-
-
-
+1. drop sandbox auth 0 into env.js
+2. baseUrl is in sandbox
+3. spin up website and log in and out and see token, userinfo and account
+4. in HomePage remove default things in template
+    * build skeleton placeholders for projects
+5. create model, services, router info in order to "get" projects to page
+6. started w/ model
+7. create ProjectsService
+    async getProjects()
+8. in HomePage
+    onMounted(( ))
+        getProjects
+    async function getProjects()
+        try
+        catch
+9. in AppState
+    add projects=[]
+10. in ProjectsService add
+    AppState.projects = res.data.map
+11. in Homepage add in return
+    projects: computed(()=>)
+12. can check Vue developer to make sure everything got ported to AppState properly
+    *check array and make sure all data you need is in there
+13. in HopePage Template build your template to test data is coming in
+    v-for="project in project" :key="project.id"
+    {{ project.title }} {{ project.creator.name}}
+14. create ProjectCard.vue
+    copy and paste your template, or duplicate it in template of ProjectCard
+15. add <ProjectCard/> to HomePage Template
+16. in ProjectCard add props: (project: {type:project required})
+17. add to <ProjectCard :project="project"> to bring in props and see it passed correctly
+18. in HomePage Template can now 
+    remove/comment out {{ project.title }} {{project.creator.name}}
+19. Now it's all tested we can complete styling in the ProjectCard
+20. in ProjectCard in return
+    // when creating a computed to bind to, it has to have the exact value the style needs
+    * coverImg: computed()=> url(${props.project.coverImg}) 
+    - make sure props is passed in "setup(props)"
+* "scoped" is used for that component only and not globally
+21.  
