@@ -313,7 +313,7 @@ in ModalWrapper
 
 24. in HopePage add new div at top with ModalWrapper with form and create project
 
-25. in ProjectCard add data-bs-toggle for modal data-bs-target and add @click setActiveProject)(
+25. in ProjectCard add data-bs-toggle for modal data-bs-target and add @click setActiveProject(
 )
 26. in ProjectCard create
     setActiveProject
@@ -340,9 +340,33 @@ in ModalWrapper
     removed bs-toggle-modal and data-bs-target
     in SetActiveProject added code to fix the modal opening when clicked
 39. ProfilePage.styling
-    
+40. in ProjectsService create
+    getProjectsByProfileId(profileId)
+41. in ProfilePage 
+    onMounted()
+    async function getProjectsByProfileId
+42. add const route = useRoute()
+43. create ProfilesService
+    async getProfileById(profileId)
+44. add function getProfileById in ProfilePage
+45. create profile model
+46. in AppState add activeProfile
+47. in ProfilesService add AppState.activeProfile = new Profile(res.data)
+48. on Profile Page add profile computed
+49. Profile Page style template
+50. do things in Account Page so we can edit account things
+    watchEffect(() => {        
+    })
+
+create ProjectForm component
 
 
+in profile page add the <projectForm/>
+add computed in return for projectForm
+
+Post Man tests...
+
+express-vue
 
 
 
