@@ -1,7 +1,7 @@
 # Single Page Applications with Vue
 01. What is the entrypoint of an application?
 
-  > The entrypoing of an application is the file that is loaded first when the application is started.  In Vue, it is the Main.js.
+  > The entrypoint of an application is the file that is loaded first when the application is started.  In Vue, it is the Main.js.
 
 02. What is the difference between a vue `component` and `page`?
 
