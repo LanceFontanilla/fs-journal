@@ -366,7 +366,71 @@ add computed in return for projectForm
 
 Post Man tests...
 
+Week 7 Day 1 Lecture
 express-vue
+
+workspace file on left, then click workspace button on bottom right
+
+my environment variables
+env file is our auth files
+bottom 3 lines are for our env.js on client
+
+port 3000
+db successful
+
+then check login
+token
+userinfo
+account
+
+postman tests
+* create your own folder for tests
+* do not change the content of the test
+
+build the backend in accordance to the postman tests
+
+in our app we have:
+albums 
+pictures 1 to many
+collaborator many to many
+
+start making a model
+Album.js 
+use uml to create schema
+
+* enum lowercase:true  makes everything lowercase 
+* coverImg default. look at end of string to format&fit
+* creatorId: type is schema
+virtuals for timestamp
+
+AlbumSchema.virtual model
+
+2. create Album controller and service
+3. in Albums controller Albums = mongoose.model()
+
+in postman
+we do not fill in body. the tests do that
+
+* top level
+    set variables
+    * add auth token from our networks tab, access token, copy then paste in 
+    both auth and evil_auth
+
+open console in postman, bottom left corner
+postman look at tests
+test results
+await album.populate 
+
+* with find you need to add a .populate to the end for the virtual
+
+follow the tests to create the server
+
+soft delete "archives data instead of deleting"
+
+async archiveAlbum(albumId, userId){
+    const album = this.getAlbumById(albumId) // can reuse previous code that finds
+}                                            //the albumId
+
 
 
 
