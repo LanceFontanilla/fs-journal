@@ -431,7 +431,26 @@ async archiveAlbum(albumId, userId){
     const album = this.getAlbumById(albumId) // can reuse previous code that finds
 }                                            //the albumId
 
+prioritize for postman tests, those are the requirements
+
+*create pictures service and controller
+
+in getPicturesInAlbum 
+await .albumsService/getAlbumsById // we use this as a check...look at notes in postIt reference
+
+* services can call other services
+
+Bad Requests for Bad Users
 
 
+Front end, get albums and display
+close all server tabs
 
+create a filter
+@click = filterBy = "games"
 
+has to be returned so in return have filterBy,
+
+computed can be multiple lines, they act like getters in mvc
+
+things that are tied to a ref, it is a watchable item
