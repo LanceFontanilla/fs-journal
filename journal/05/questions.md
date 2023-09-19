@@ -13,11 +13,11 @@
 
 04. Which two `HTTP` request types include a body?
 
-  > The two HTTP requst types that include a body are Create and Update.
+  > The two HTTP request types that include a body are Create and Update.
 
 05. In a/an _______ coding model, when you call a function, it returns only when the action has finished and stops your program for the time the action takes. Likewise in a/an _______ coding model, multiple things are allowed to happen at one time. When you perform an action, your program continues to run.  Fill in the blanks.
 
-  > In a Synchronous coding model, you call a function and it returns only when the action has finished.  In as Asynchronouse coding model multpile things are allowed to happen at one time.
+  > In a Synchronous coding model, you call a function and it returns only when the action has finished.  In as Asynchronous coding model multiple things are allowed to happen at one time.
 
 06. What are the three types of data relationships? Provide an example of each.
 

@@ -454,3 +454,71 @@ has to be returned so in return have filterBy,
 computed can be multiple lines, they act like getters in mvc
 
 things that are tied to a ref, it is a watchable item
+
+create modalwrapper component
+in modals can data bind id's to the modal
+you can also use slots to pass id's to that slot
+
+modal wrappers needs to have a beginning and an end tag
+<ModalWrapper>
+    <template #button>
+        <i class = "mdi mdi-plus-box><i/>" Create Album
+    <template/> 
+<ModalWrapper>
+
+create Album form component and put it in the modal wrapper
+
+selects on forms work great when backends have enum values so they don't have to guess at the correct data to fill in
+
+in album form, createAlbum
+
+async getAlbums on server-side, we can .sort adding " - " minus in front reverses the order
+ex. .sort title is A-Z .sort -title is Z-A
+    .sort createdAt is oldest first .sort -createdAt is the newest first
+
+mimic on the front end with .unshift
+
+user.isAuthenticated is slightly better to use than account because it come back faster than account
+
+on the album card add router-link
+create AlbumDetailsPage first
+in router, create a path
+
+* the pages themselves should handle getting the information it is showing
+
+const route = useRoute()  // we use this to pass the albumId because we defined the albumId when we used the routeLink
+await albumsService.getPicturesByAlbumId(params.route.albumId)
+
+need to put data on page, have to save them to AppState
+but we also need a model
+so create a Picture.js model
+
+* be careful of "image" because it is already a class,
+
+we use computed to pull data from AppState to apply it to the page
+
+aspect ratio for pictures
+
+masonry-container 
+use columns
+
+picture.Data.value.albumId = route.params.albumId //assigns
+
+we name it 'profile' because we are looking at other peoples account info
+and not our account info
+
+in collaborator controller
+we pull userinfo from our auth0provider
+
+collaborators don't have userId they only have userId so we have to be explicit and pass (accountId: userId) 
+
+take a look at what information the postman test is looking for
+
+in  collabs Service in remove collaborator
+the return will have errors on album and creator because it doesn't know about the virtuals from the .populate (album populate) //these are 2 virtuals, does not need comma between them
+
+
+
+
+
+
