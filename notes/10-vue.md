@@ -517,8 +517,43 @@ take a look at what information the postman test is looking for
 in  collabs Service in remove collaborator
 the return will have errors on album and creator because it doesn't know about the virtuals from the .populate (album populate) //these are 2 virtuals, does not need comma between them
 
+Albums schema virtual memberCount
+localField _id  //this is flopped as my _id is looking at the AlbumId ....this is reversed from CollabSchema
+foreignField albumId  //look at reference notes
+ref collaborator
+count true
 
 
+.populate('profile', -email) //these are
+.populate (path: 'album')  //the same thing
+
+.populate (path: 'album , populate:(path: 'creator memberCount', select: -email)')
 
 
+in AuthService there is a place where you can put code to do something once the user is authorized
+
+in AccountService 
+async getMyCollaborations(){
+    try catch here where we usually do not do try/catches 
+}
+
+
+in AppState [] is for truthy default and null is for falsy default
+
+//NOTE - this gives us flexibility on our prop, to avoid cascading class constructor issues
+props: (album: type: Album || Object, required:true)
+
+
+createCollab, has new weird stuff in it
+
+isCollaborator computed
+and remove Collab weird stuff
+
+**** in CreateAlbum we do things to route to the new album on creating the album
+
+we have to use watchEffect on AlbumDetailsPage 
+ 
+
+ticket is collaborator
+cancel event is archived
 
