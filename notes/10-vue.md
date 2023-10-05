@@ -558,3 +558,60 @@ ticket is collaborator
 cancel event is archived
 
 
+VUE TOUR:
+
+
+install vueTour package
+
+* npm install vue3-tour
+
+
+IN MAIN.JS
+* import Vue3Tour from 'vue3tour'
+* import 'vue3-tour/dist/vue3-tour.css'
+
+in root
+
+.use(router)
+* .use(Vue3Tour)
+.mount('#app')
+
+<v-tour :step="steps">
+
+</v-tour>
+
+uses steps array in a v-for loop to create the pop-ups
+
+steps:[
+    {
+        target: '#v-step-0'  //the id of the element we selected to target
+        header: title:'Hello'
+        content: 'This is the step component'
+        actions: {next: '<button> </button>'}
+        params:{placement:'top'}
+    }
+    {
+        target: '#vue-step-1'
+        header:
+        content:
+        actions:
+        params
+    }
+
+tourCallBacks:{
+    onFinish: (()=> {
+
+    })
+}
+]
+
+
+
+in script tag but outside the setup
+
+mounted: function(){
+    this.$tours[]
+}
+
+
+can abstract the tour to its own component
