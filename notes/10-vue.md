@@ -615,3 +615,30 @@ mounted: function(){
 
 
 can abstract the tour to its own component
+
+
+Sockets
+
+in client env.js UseSockets = true
+
+
+in network tab in developer tools WS tab is for WebSockets
+
+green is what you're sending
+red is what is sent to you
+
+WebSockets use SocketService and SocketHandler
+we don't really touch SocketService we deal with the SocketHandlers
+
+you only send messages... not .get .put .push .delete just message
+
+in Server side we have AuthHandler, SocketProvider
+
+on Homepage of PostIt
+socketService.emit is to send
+socketService.emit('Socket_Test')
+
+
+
+
+
