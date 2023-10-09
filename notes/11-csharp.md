@@ -221,6 +221,14 @@ services.AddScoped<CatsRepository>();  //order does matter
 services.AddScoped<CatsService>();
 
 
+passing id's * look at getCatById
+
+[HttpGet("{catId}")]
+
+
+controller to service to repository
+
+function that doesn't return a value you use void
 
 
 
