@@ -29,7 +29,7 @@
 
 06. In the Car example what is `string` an indication of?
 
-  > The 'string' is an indication of the return type of "Vroooom" being a string.  
+  > The 'string' is an indication of the return type of "Vroooom" which is that is a string.  
 
 07. In the Car example what is `abstract` preventing?
 
