@@ -639,6 +639,7 @@ socketService.emit is to send
 socketService.emit('Socket_Test')
 
 
+C# Lecture Day 2
 
 
 
