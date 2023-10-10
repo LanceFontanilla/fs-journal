@@ -233,3 +233,31 @@ function that doesn't return a value you use void
 
 
 
+C# Lecture Day 2
+
+dbSetup.sql 
+
+Tables are now what schemas used to be
+
+* create table
+in dbSetup.sql
+* INSERT INTO hotdogs
+* SELECT * FROM hotdogs; //all columns from hotdogs
+
+can SELECT name, price FROM hotdogs, //only name and price from hotdogs
+can SELECT name, price FROM hotdogs, WHERE 'hasKetchup' = true; //only name and price of hotdogs that has ketchup
+can SELECT name, price FROM hotdogs, WHERE 'hasKetchup' = true AND price < 6; //only name price of hotdogs that has ketchup and < $6
+SELECT name, description FROM hotdogs, WHERE description LIKE '%jalapeno%';
+
+
+mysqltutorial.org for reference guide 
+
+id INT AUTO_INCREMENT PRIMARY KEY, 
+
+SELECT * FROM hotdogs WHERE id = 1;
+
+DELETE FROM hotdogs;
+
+
+
+
