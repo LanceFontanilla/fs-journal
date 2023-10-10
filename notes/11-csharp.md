@@ -260,4 +260,45 @@ DELETE FROM hotdogs;
 
 
 
+default charset utf8mb4 COMMENT '';
+
+* GregsLIst
+
+* CREATE TABLE cars
+* INSERT INTO cars
+
+appsetting.Development.json
+
+* fill out connection string that Mick slacks out with our info
+* Models
+* Controller - right-click New C# Controller 
+* Services - right-click New C# Class
+* Repository -right-click New C# Class
+
+* startup create dependencies
+services.AddScoped<CarsRepository>();
+services.AddScoped<CarsServices>();
+
+* in CarsRepository.cs we have to write SQL to call to our database
+
+    internal List<Car> GetAllCars()
+    {
+        string sql = "SELECT * FROM cars;";
+        List<Car> cars = _db.Query<Car>(sql).ToList();
+        return cars;
+    }
+
+can test/debug SQL statements in dbsetup to make sure it all works
+
+in internal string RemoveCar look at //THIS IS where we WOULD check for ownership
+
+
+strings are nullable by default
+you can make int a null by putting a ? after it in models
+?? is the null coalescence verifier 
+
+
+
+
+
 
