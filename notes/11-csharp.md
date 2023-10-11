@@ -336,6 +336,8 @@ Day 3 C# POST IT with AUTH
         album.Creator = account;
         }).ToList(); //order of <Album, Account matters and it matches the SELECT order.
 
+
+* [AUTHORIZE]//how to make sure the user is authorized before creating
 * [HttpPost]
     -   need to use Auth0 to assign the creator
     -   private readonly Auth0Provider _auth0; // add to top
@@ -346,9 +348,14 @@ Day 3 C# POST IT with AUTH
         - add Account userInfo = await _auth0.GetUserInfoAsync<Account>(HttpContext);
         - albumData.CreatorId = userInfo.id;
         - need to join account to album in our sql SELECT
-        
+    
+* [HttpGet("{albumId}")]
+    public ActionResult<Album> GetById(int albumId)
 
+* 
 
+recipe CRUDs
+Don't bring laptop to ask questions. 
 
 
 
