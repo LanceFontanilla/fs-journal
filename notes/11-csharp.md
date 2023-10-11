@@ -297,6 +297,57 @@ strings are nullable by default
 you can make int a null by putting a ? after it in models
 ?? is the null coalescence verifier 
 
+Day 3 C# POST IT with AUTH
+
+* Add your Connection String in appsetting.Development.json
+* add the Auth0 info also into appsetting.Development
+* add Auth0 in env.js base url https://localhost:7045
+
+* dbSetup "schema" to pull info from different tables
+* in dbSetup execute account table then log in to populate the account table
+* create table for albums
+    - TINYINT is a BOOLEAN alternative
+    - creatorId relies on another table so you use FOREIGN KEY
+    - FOREIGN KEY(creatorId) REFERENCES accounts(id) ON DELETE CASCADE //ON DELETE CASCADE deletes all albums with that creatorId
+
+* JOINS 
+    * SELECT * FROM albums JOIN accounts; //pulls all info from albums and accounts tables
+    * SELECT * FROM albums alb JOIN accounts act ON id act.id = alb.creatorId;
+    * SELECT alb.*, act.name FROM albums alb JOIN accounts act ON act.id = alb.creatorId;
+    * SELECT * 
+      FROM accounts act
+        JOIN albums alb ON alb.creatorId = act.id
+        WHERE act.id = 'idString'
+
+* create model
+    - prop is a snippet
+* create repository, then service, then controller so dependencies are already made
+* Startup.cs add services.AddScoped<AlbumRepository> and <AlbumServices>
+
+* Apps Controller [HttpGet]
+* update model to join account
+    - public Account Creator { get; set; }
+        - Account is the model that gets joined to the Creator line
+    - In Repo
+        - add JOIN accounts act ON act.id = alb.creatorId // account id matches the creator id
+        - change SELECT alb.*, act.*
+        - List<Album> albums = _dbQuery<Album, Account, Album>(sql, (album,account)=>
+        {
+        album.Creator = account;
+        }).ToList(); //order of <Album, Account matters and it matches the SELECT order.
+
+* [HttpPost]
+    -   need to use Auth0 to assign the creator
+    -   private readonly Auth0Provider _auth0; // add to top
+    -   Auth0Provider auth0 // add to constructor
+
+    - in the [HttpPost]
+        - add async Task<ActionResult<ActionResult<Album>> Create....
+        - add Account userInfo = await _auth0.GetUserInfoAsync<Account>(HttpContext);
+        - albumData.CreatorId = userInfo.id;
+        - need to join account to album in our sql SELECT
+        
+
 
 
 
