@@ -19,7 +19,7 @@ pick out keywords and industry terms used in the job description
 
 have soft skills and hard skills included
 
-linkdin and github
+linkedin and github
 
 list relevant technology skills
 
@@ -28,5 +28,21 @@ save as pdf
 rough draft 2page 
 
 canva template
+
+10/11/2023 Career Services Lecture
+
+resume/linkedin
+github
+landing page
+
+bstg
+tech gems
+
+virtual networking
+10-15 companies you want to work for
+interact with their postings
+
+job postings
+24 hour follow-up on job application
 
 
