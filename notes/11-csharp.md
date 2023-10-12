@@ -357,6 +357,40 @@ Day 3 C# POST IT with AUTH
 recipe CRUDs
 Don't bring laptop to ask questions. 
 
+Day 4 Notes
+
+Creating POST IT pictures
+
+* Create Table for pictures
+    - make sure all references are setup properly and all have the correct Data Types
+    - need to have ON DELETE CASCADE on FOREIGN KEYs
 
 
 
+* newPicture.Creator= userInfo; //use with collaborator
+
+* endpoints in postman show where the CRUD routes need to go
+
+* get pictures in album will be in the albums controller
+
+* [HttpGet("{albumId}/pictures")]
+* bring in picturesService into the albumController
+
+* in repository sql SELECT, have to decide how to query the database for just the pictures in the albumId
+
+* create Collaborator TABLE Many to Many
+
+* services can talk to services but services shouldn't talk to another services repository
+
+* Collaborator repo 
+    - just SELECT LAST_INSERT_ID()
+
+This is special for the Collaborator Get
+* in Account.cs
+public class AccountCollaboratorViewModel : Account 
+{
+    public int CollaboratorId { get; set; }
+}
+
+Album Controller
+[HttpGet ("{albumId}/collaborators")]
