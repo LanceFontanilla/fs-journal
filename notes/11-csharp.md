@@ -394,3 +394,62 @@ public class AccountCollaboratorViewModel : Account
 
 Album Controller
 [HttpGet ("{albumId}/collaborators")]
+
+
+REVIEW WEEK BEFORE FINAL!!
+
+INSTACULT 
+
+Enter env.js file and dbDevelopment infoString
+Spin everything up to make sure it all works!
+SERVER SIDE:
+* create model cult
+* create controller, service and repo
+* in Startup add Scoped for dependencies
+* create Table for cults
+* enter data for table
+
+* create get cults
+
+* add Account Leader to Model
+* add JOIN accounts ON accounts.id = cults.leaderId
+
+* Tid adds a generic type  
+* can extend Profile to Account to pull off info like email and CC#s 
+
+* create getbyId
+* get all and get by id is very similar
+
+* create POST aka createCult
+* [HTTPPost] 
+[ AUTHORIZE ]
+
+* get Cults, change where you see only cults that are invitation false
+
+* cultsService filter info with FIND ALL and return filtered
+* modify getCults to use HTTPContext to pass down userId
+LIST<Cult> filtered = cults.FINDALL (cult => )
+
+Object reference not set to an instance of an object. //This means you said something was going to be an object but it's not an object.
+
+userInfo?.id = using the elvis operator now passes null down 
+
+*NOTE - make sure to have account before requesting info
+
+* account middleware
+
+beforeEnter:AuthGuard //blocks non logged in users from accessing page, will prompt to log in
+beforeEnter:AuthSettled //waits for the automatic login 
+
+if getting errors with Auth0 wait like a minute
+
+* index body can make it bg-dark to make whole page dark
+
+*NOTE - picture background where it changes one from another is important for the final
+
+* components that don't have a lot of complex code can remove setup and return 
+
+
+
+
+

@@ -638,6 +638,10 @@ on Homepage of PostIt
 socketService.emit is to send
 socketService.emit('Socket_Test')
 
+REVIEW WEEK BEFORE FINAL!
+
+instaCult
+
 
 
 
