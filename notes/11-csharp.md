@@ -449,7 +449,32 @@ if getting errors with Auth0 wait like a minute
 
 * components that don't have a lot of complex code can remove setup and return 
 
+DAY 2 CULT continued
+
+* create CultMember
+    * has special join to add account info
+    * has memberCount
+    * in CultMemberService CreateCultMember, call to the _cultService to update MemberCount
 
 
+
+* make sure dependencies go in order by NOT having them point at each other. Find the most direct route to where one can go before the other
+
+* cult member delete LOOK FOR REFERENCE FOR FINAL
+
+can't leave the cult, leader can only exile you... so only the person who created the cult can do this action
+need to get CultMemberById. just want the one ID for this info. 
+used the updateMember count to decrease the memberCount
+
+FRONT END
+
+in Models changed Account to extend newly created Profile then extended to add Cultist 
+not it closely matches the model from the backend
+
+Need to make cultId an object { }
+const cultID
+
+Cultist smaller template
+shows how to get props to the v-for
 
 
