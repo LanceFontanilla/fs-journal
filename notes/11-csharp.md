@@ -438,6 +438,7 @@ userInfo?.id = using the elvis operator now passes null down
 
 * account middleware
 
+* in Router
 beforeEnter:AuthGuard //blocks non logged in users from accessing page, will prompt to log in
 beforeEnter:AuthSettled //waits for the automatic login 
 
@@ -476,5 +477,39 @@ const cultID
 
 Cultist smaller template
 shows how to get props to the v-for
+
+
+DAY 3 HELP REVIEWS
+
+* start with env files
+* make sure everything spins up
+* create tables from UML
+* create model
+* create Profile Model modify Account Model and have Account:Profile //account extends profile
+* Profile for public view and Account for private/only the account owner
+* build out repo, services, controller for restaurant
+
+* Interfaces
+    * contract to define what you want a class to have, take advantage of inheritance 
+
+    * IRepository.cs 
+
+* in Get, get all restaurants that aren't shut down unless you're the owner of it * 
+    - restaurants = restaurants.FINDALL(restaurant => restaurant.IsShutdown == false || restaurant.CreatorId == userId);
+    //NOTE - filter out and only return the restaurants that are not shutdown unless you are the owner of it
+* change order of requests to make sure account IsSettled before restaurants makes the request
+* in restaurants service the ? makes it so it will pass even though there is a null
+
+
+* in non-complex components can just have template and stript setup but then everything is returned.
+
+* hide shutdown restaurants on getById
+* beforeEnter authSettled on router
+
+* in Models you can have a default picture, use restaurant report as reference
+* 2nd join on GetRestaurantReports
+* debug the sql statements but change the @restaurant to a number in dbSetup
+
+* GROUP BY 
 
 
