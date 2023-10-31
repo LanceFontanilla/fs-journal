@@ -27,3 +27,26 @@ visual studio connect to server
 ip address is public ip address
 
 "connections": ""
+
+
+DOCKER
+Docker files build a docker image
+
+Github Actions
+Lint and test* lookup**
+
+YAML
+
+Do when you are ready to deploy
+create new top level folder while not in the workspace
+
+.github
+
+new folder
+ - workflows
+   2 new files
+    - build.yml
+    - deploy.yml
+
+step 3 today, skip step 2
+
